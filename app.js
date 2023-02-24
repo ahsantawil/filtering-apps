@@ -7,6 +7,7 @@ const logger = require('morgan');
 const homeRouter = require('./routes/home');
 const loginRouter = require('./routes/login');
 const dashboardRouter = require('./routes/dashboard');
+const snRouter = require('./routes/sn');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use('/sbadmin', express.static(path.join(__dirname, 'node_modules/startboots
 app.use('/', homeRouter);
 app.use('/login', loginRouter);
 app.use('/dashboard', dashboardRouter);
+app.use('/sn', snRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
